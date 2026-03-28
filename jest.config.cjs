@@ -1,24 +1,17 @@
 /** @type {import("jest").Config} **/
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "jsdom", // Изменено с "node" на "jsdom" для поддержки React компонентов
-  extensionsToTreatAsEsm: [".ts", ".tsx"],
+  testEnvironment: "jsdom",
   transform: {
-    "^.+\\.(ts|tsx)$": [
-      "ts-jest",
-      {
-        useESM: true,
-      },
-    ],
+    "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
   },
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
-    "^@/components/(.*)$": "<rootDir>/src/Templates/$1",
+    "^@/components/(.*)$": "<rootDir>/src/Components/$1",
     "^@/templates/(.*)$": "<rootDir>/src/Templates/$1",
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
     "\\.(gif|ttf|eot|svg|png)$": "jest-transform-stub",
   },
-  transformIgnorePatterns: ["node_modules/(?!(camelcase-keys|map-obj)/)"],
+  transformIgnorePatterns: ["/node_modules/(?!(camelcase-keys|map-obj)/)"],
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
   testMatch: [
     "**/__tests__/**/*.(ts|tsx|js)",

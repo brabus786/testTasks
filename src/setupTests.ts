@@ -13,7 +13,7 @@ jest.mock("next/image", () => {
   const React = require("react");
   return {
     __esModule: true,
-    default: (props) => {
+    default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
       return React.createElement("img", props);
     },
   };

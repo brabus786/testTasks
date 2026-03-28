@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,12 +15,18 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/Components/*"],
-      "@/templates/*": ["./src/Templates/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/Components/*"
+      ],
+      "@/templates/*": [
+        "./src/Templates/*"
+      ]
     },
     "maxNodeModuleJsDepth": 0,
     "disableSourceOfProjectReferenceRedirect": true,
@@ -30,5 +40,10 @@
     "__tests__/**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next", "out", "jest.config.cjs"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "jest.config.cjs"
+  ]
 }

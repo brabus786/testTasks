@@ -9,12 +9,15 @@ process.env.NEXT_PUBLIC_WEATHERAPI = "test-weather-api-key";
 process.env.NEXT_PUBLIC_MAP = "test-google-maps-api-key";
 
 // Mock Next.js Image component
-jest.mock("next/image", () => ({
-  __esModule: true,
-  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
-    return React.createElement("img", props);
-  },
-}));
+jest.mock("next/image", () => {
+  const React = require("react");
+  return {
+    __esModule: true,
+    default: (props) => {
+      return React.createElement("img", props);
+    },
+  };
+});
 
 // Mock next/router
 jest.mock("next/router", () => ({

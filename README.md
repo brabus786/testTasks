@@ -2,7 +2,7 @@
 
 A Next.js application with weather data and Star Wars integration.
 
-**Live:** https://weather-livid-sigma.vercel.app/
+**Live:** https://nikolay-pylypchatin-tests.vercel.app/
 
 ## Prerequisites
 

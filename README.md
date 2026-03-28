@@ -1,6 +1,8 @@
-# Weather App
+# Test tasks App
 
 A Next.js application with weather data and Star Wars integration.
+
+**Live:** https://weather-livid-sigma.vercel.app/
 
 ## Prerequisites
 

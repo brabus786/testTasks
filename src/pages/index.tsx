@@ -17,6 +17,37 @@ const tasks = [
   },
 ];
 
+const executePromise = async () => {
+  return await new Promise((resolve, reject) => {
+    if (Math.random() > 0.5) {
+      resolve("Success >>>");
+    } else {
+      reject("Failure <<<");
+    }
+  });
+};
+
+await executePromise()
+  .then((v) => {
+    console.log("Promise executed", v);
+  })
+  .catch((e) => {
+    console.error("Promise failed", e);
+  })
+  .finally(() => {
+    console.log("Promise settled");
+  });
+
+console.log("step 1");
+
+[...Array(5)].forEach(async (_, i) => {
+  if (i === 4) {
+    console.log("last iteration", i);
+  }
+});
+
+console.log("step 2");
+
 const Home = () => {
   return <HomeTemplate tasks={tasks} />;
 };
